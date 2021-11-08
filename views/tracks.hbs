@@ -1,0 +1,39 @@
+
+
+{{#if tracksArray}}
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">SpotiFly <span class="sr-only">(current)</span></a>
+      </li>
+  </div>
+  <h2 class="tk-title">Track</h2>
+</nav>
+{{/if}}
+
+<div class="container-album">
+  <div class="album-title">
+    <h2 ><br />{{tracksArray.[0].artists.[0].name}}</h2>
+  </div>
+
+<div class="conta">
+  <div class="tracks">
+    <ul class="tracks-list">
+         {{#each tracksArray}}
+  <li class="list-group-item one-track">
+        <p class="skin">
+          <!-- adding a background image for each track(from css) -->
+        </p>
+        <h3>{{this.name}}</h3>
+        <audio controls="" name="media">
+        <source src="{{preview_url}}" type="audio/mpeg"></audio>
+    </li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
